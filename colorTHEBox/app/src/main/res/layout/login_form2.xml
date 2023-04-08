@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/backgroudColor">
+
+    <TextView
+        android:id="@+id/heading"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/butcherman"
+        android:gravity="center"
+        android:text="@string/HeadingText"
+        android:textSize="@dimen/HeadingTextSize"
+        android:paddingTop="30dp"/>
+
+    <EditText
+        android:id="@+id/editTextTextEmailAddress"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:ems="10"
+        android:layout_below="@id/heading"
+        android:hint="Email"
+        android:inputType="textEmailAddress"
+        android:textColor="@color/white"
+        android:textColorHint="@color/white"
+        android:textSize="@dimen/bodyTextSize" />
+
+    <EditText
+        android:id="@+id/password_EDIT_text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@id/editTextTextEmailAddress"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginBottom="-94dp"
+        android:ems="10"
+        android:hint="Password"
+        android:inputType="textPassword"
+        android:textColor="@color/white"
+        android:textColorHint="@color/white"
+        android:textSize="@dimen/bodyTextSize" />
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@id/password_EDIT_text"
+        android:layout_marginBottom="-104dp"
+        android:text="Login"
+        android:textSize="@dimen/bodyTextSize" />
+
+    <TextView
+        android:id="@+id/signUp_textview"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:text="Sign up"
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        android:textSize="@dimen/bodyTextSize" />
+
+</RelativeLayout>

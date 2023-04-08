@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="bodyTextSize">25dp</dimen>
+    <dimen name="HeadingTextSize" >70dp</dimen>
+    <dimen name="margin_between">18dp</dimen>
+    <dimen name="left_right_margin">30dp</dimen>
+</resources>
