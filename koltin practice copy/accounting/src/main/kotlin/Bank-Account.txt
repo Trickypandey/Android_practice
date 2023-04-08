@@ -1,0 +1,4 @@
+"100015", "tricky pandey", "saving", 2.5, 120000
+"100001", "sourabh pandey", "current", 4.5, 3000
+"4100014", "shivam tiwari", "current", 5.5, 2200000
+"1100212", "dhaval", "saving", 2.7, 11100000
