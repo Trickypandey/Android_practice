@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">practice</string>
+    <string-array name="birds">
+        <item>Select the Country</item>
+        <item>India</item>
+        <item>Russia</item>
+        <item>pakistan</item>
+        <item>japan</item>
+        <item>china</item>
+        <item>America</item>`
+    </string-array>
+</resources>

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+ <item
+     android:id="@+id/homepage"
+     android:enabled="true"
+     android:icon="@drawable/home_icon"
+     android:title="Home"
+     />
+ <item
+     android:id="@+id/location"
+     android:enabled="true"
+     android:icon="@drawable/navbar_location_icon"
+     android:title="Location"
+     />
+ <item
+     android:id="@+id/chats"
+     android:enabled="true"
+     android:icon="@drawable/navabar_chats_icon"
+     android:title="Chats"
+     />
+ <item
+     android:id="@+id/events"
+     android:enabled="true"
+     android:icon="@drawable/navbar_events_icon"
+     android:title="Events"
+     />
+ <item
+     android:id="@+id/profile"
+     android:enabled="true"
+     android:icon="@drawable/navabar_profile_icon"
+     android:title="Profile"
+     />
+</menu>

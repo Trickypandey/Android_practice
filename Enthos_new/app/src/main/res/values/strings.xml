@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Entheos</string>
+    <string name="forgotpass"> <u>Forgot Password?</u></string>
+    <string name="createACC"><u>CREATE AN ACCOUNT</u></string>
+    <string name="or_for_divider"><u>-OR-</u></string>
+    <string name="login_now"><u>Login Now</u></string>
+</resources>
