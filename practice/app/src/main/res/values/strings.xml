@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">practice</string>
+    <string name="app_name">Basic App</string>
     <string-array name="birds">
         <item>Select the Country</item>
         <item>India</item>

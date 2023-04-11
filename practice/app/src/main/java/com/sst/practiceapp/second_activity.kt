@@ -1,16 +1,18 @@
-package com.example.practice
+package com.sst.practiceapp
 
 import android.annotation.SuppressLint
-import android.content.Intent
 import android.os.Bundle
+import android.widget.ImageButton
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
+import com.sst.practiseapp.R
 
 
 class second_activity : AppCompatActivity() {
     @SuppressLint("SetTextI18n")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
         setContentView(R.layout.activity_second)
         val name=findViewById<TextView>(R.id.name)
         val email=findViewById<TextView>(R.id.email)
@@ -22,6 +24,10 @@ class second_activity : AppCompatActivity() {
 
         val intent = getIntent();
         val hashMap = intent.getSerializableExtra("data") as HashMap<*, *>?
+        val back =findViewById<ImageButton>(R.id.action_bar_back)
+        back.setOnClickListener{
+            finish()
+        }
         if (hashMap != null) {
             name.text = "${name.text} ${hashMap["name"]}"
             email.text="${email.text} ${hashMap["Email"]}"

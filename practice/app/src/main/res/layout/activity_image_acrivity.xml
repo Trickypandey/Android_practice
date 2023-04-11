@@ -1,31 +1,84 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    tools:context=".image_acrivity">
+    android:fillViewport="true"
+    tools:context="com.sst.practiceapp.image_acrivity">
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <TableLayout
+        android:id="@+id/tableLayout"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TableRow
+            android:background="#a8ece1">
+
+            <ImageButton
+                android:id="@+id/action_bar_back"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_alignParentTop="true"
+                android:layout_centerHorizontal="true"
+                android:layout_gravity="center_vertical"
+                android:background="@android:color/transparent"
+                android:paddingLeft="8dp"
+                android:src="@drawable/back_icon" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_alignParentTop="true"
+                android:layout_weight="1"
+                android:gravity="center_horizontal"
+                android:padding="10dp"
+                android:text="@string/app_name"
+                android:textSize="20dp"
+                android:textStyle="bold" />
+
+        </TableRow>
+    </TableLayout>
 
     <Button
         android:id="@+id/btn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
-        android:layout_marginTop="40dp"
         android:text="Select or Capture Image"
-        android:textAppearance="?android:attr/textAppearanceLarge" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintVertical_chainStyle="packed"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/iv"
+        app:layout_constraintTop_toBottomOf="@id/tableLayout"/>
 
     <ImageView
         android:id="@+id/iv"
-        android:layout_width="300dp"
-        android:layout_height="300dp"
+        android:layout_width="162dp"
+        android:layout_height="154dp"
         android:layout_gravity="center"
-        android:layout_marginTop="20dp"
         android:scaleType="fitXY"
-        android:src="@mipmap/ic_launcher"/>
-    <TextView
-        android:id="@+id/text"
-        android:layout_width="match_parent"
+        android:orientation="horizontal"
+        android:src="@mipmap/ic_launcher"
+        app:layout_constraintBottom_toTopOf="@id/send"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn" />
+
+    <Button
+        android:id="@+id/send"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:gravity="bottom"/>
-</LinearLayout>
+        android:layout_gravity="center_horizontal"
+        android:text="Send Image"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/iv" />
+</androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

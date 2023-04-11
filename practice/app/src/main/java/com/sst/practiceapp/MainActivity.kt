@@ -1,14 +1,15 @@
-package com.example.practice
+package com.sst.practiceapp
 
 import android.content.Intent
 import android.os.Bundle
+import android.text.Layout
 import android.text.method.HideReturnsTransformationMethod
 import android.text.method.PasswordTransformationMethod
 import android.view.View
 import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.get
-import java.net.Inet4Address
+import androidx.constraintlayout.widget.ConstraintLayout
+import com.sst.practiseapp.R
 
 
 class MainActivity : AppCompatActivity(), AdapterView.OnItemSelectedListener {
@@ -21,7 +22,7 @@ class MainActivity : AppCompatActivity(), AdapterView.OnItemSelectedListener {
     lateinit var sSpinner :Spinner
     lateinit var eNumber :TextView
     lateinit var eAddress: TextView
-    var  eHobby :LinearLayout?=null
+    var  eHobby :ConstraintLayout?=null
     // four text fields
     lateinit var etName: EditText
     lateinit var etpassword: EditText
@@ -34,24 +35,27 @@ class MainActivity : AppCompatActivity(), AdapterView.OnItemSelectedListener {
     lateinit var textViewShowPassword:TextView
     var isAllFieldsChecked = false
     // regex for email format
-    val emailPattern = "^[a-zA-Z0-9+_.-]+@[a-zA-Z0-9.-]+\$"
-//    regex for name
+    val emailPattern = "[a-zA-Z0-9._-]+@[a-z]+\\.+[a-z]+"
+    //    regex for name
     val namePattern ="/^[a-zA-Z ]*\$/"
 
     //
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-       display()
-        val  title:TextView =findViewById(R.id.textview_for_login)
-        title.setOnClickListener{
-            val imgintent=Intent(this,image_acrivity::class.java)
-            startActivity(imgintent)
+       val back =findViewById<ImageButton>(R.id.action_bar_back)
+        back.setOnClickListener{
+            finish()
         }
+        display()
+        textViewShowPassword=findViewById(R.id.text_showpass)
+        etpassword=findViewById(R.id.password)
+        etConfPassword=findViewById(R.id.confirmpas)
+        showPass()
         bSignUp=findViewById(R.id.sign_up)
         bSignUp.setOnClickListener(){
             if(signUp()){
-                var intentsecond_activity = Intent(this,second_activity::class.java)
+                var intentsecond_activity = Intent(this, second_activity::class.java)
                 intentsecond_activity.putExtra("data",data_list)
                 startActivity(intentsecond_activity)
             }
@@ -60,16 +64,34 @@ class MainActivity : AppCompatActivity(), AdapterView.OnItemSelectedListener {
     }
     //submit the sign up form
     fun signUp():Boolean{
+
         createInstance()
         if (checkAllFields()) return true
         return false
     }
+    fun showPass(){
+        textViewShowPassword.setOnClickListener(View.OnClickListener {
+            if (textViewShowPassword.text.equals("Show")) {
+                etpassword.transformationMethod = HideReturnsTransformationMethod.getInstance()
+                etConfPassword.transformationMethod = HideReturnsTransformationMethod.getInstance()
+                textViewShowPassword.text = "Hide"
+                etpassword.setSelection(etpassword.text.length)
+                etConfPassword.setSelection(etConfPassword.text.length)
+            } else {
+                textViewShowPassword.text = "Show"
+                etpassword.transformationMethod = PasswordTransformationMethod()
+                etConfPassword.transformationMethod = PasswordTransformationMethod()
+                etpassword.setSelection(etpassword.text.length)
+                etConfPassword.setSelection(etConfPassword.text.length)
+            }
+        })
+    }
     // creating instance of the variable
     fun createInstance(){
-        textViewShowPassword=findViewById(R.id.text_showpass)
+
         eAddress=findViewById(R.id.address)
         eNumber = findViewById(R.id.phone_number)
-        etEmail=findViewById(R.id.address)
+        etEmail=findViewById(R.id.email)
         tvHobby=findViewById(R.id.hobby_text)
         cb1Hobby=findViewById(R.id.checkBox)
         cb2Hobby=findViewById(R.id.checkBox2)
@@ -80,25 +102,9 @@ class MainActivity : AppCompatActivity(), AdapterView.OnItemSelectedListener {
         eHobby = findViewById(R.id.hobby_value)
         tvGender=findViewById(R.id.gender_text)
         etName=findViewById(R.id.username)
-        etpassword=findViewById(R.id.password)
-        etConfPassword=findViewById(R.id.confirmpas)
         etEmail=findViewById(R.id.email)
         rbgenderval=findViewById(rgGender.checkedRadioButtonId)
-        textViewShowPassword.setOnClickListener(View.OnClickListener {
-            if (textViewShowPassword.getText().equals("Show")) {
-                etpassword.setTransformationMethod(HideReturnsTransformationMethod.getInstance())
-                etConfPassword.setTransformationMethod(HideReturnsTransformationMethod.getInstance())
-                textViewShowPassword.setText("Hide")
-                etpassword.setSelection(etpassword.text.length)
-                etConfPassword.setSelection(etConfPassword.text.length)
-            } else {
-                textViewShowPassword.setText("Show")
-                etpassword.setTransformationMethod(PasswordTransformationMethod())
-                etConfPassword.setTransformationMethod(PasswordTransformationMethod())
-                etpassword.setSelection(etpassword.text.length)
-                etConfPassword.setSelection(etConfPassword.text.length)
-            }
-        })
+
     }
 
     // check that all imput are present or not
@@ -120,7 +126,13 @@ class MainActivity : AppCompatActivity(), AdapterView.OnItemSelectedListener {
             etEmail.error = "This field is required"
             return false
         }
-        if (!validateEmail(etEmail)) return true
+        if (!validateEmail(etEmail)) {
+            etEmail.error="Enter a valid email"
+            return false
+        }
+        else{
+            etEmail.error= null
+        }
         if (etpassword.length()==0){
             etpassword.error = "This field is required"
             return false
@@ -166,13 +178,7 @@ class MainActivity : AppCompatActivity(), AdapterView.OnItemSelectedListener {
     }
     // validate email
     fun validateEmail(view: EditText):Boolean {
-        if (view.text.matches(emailPattern.toRegex())) {
-            view.error=null
-            return true
-        } else {
-            view.error="Enter a valid email"
-            return false
-        }
+        return view.text.matches(emailPattern.toRegex())
     }
 
     // validate name
@@ -208,7 +214,7 @@ class MainActivity : AppCompatActivity(), AdapterView.OnItemSelectedListener {
     }
 
     //
-     override fun onNothingSelected(p0: AdapterView<*>?) {
+    override fun onNothingSelected(p0: AdapterView<*>?) {
         TODO("Not yet implemented")
     }
 }

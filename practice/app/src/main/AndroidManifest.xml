@@ -1,36 +1,61 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
+
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
-    <uses-permission android:name="android.permission.CAMERA" />
+
     <application
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="@xml/backup_rules"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@drawable/icon"
         android:label="@string/app_name"
+        android:screenOrientation="portrait"
         android:supportsRtl="true"
         android:theme="@style/Theme.Practice"
         tools:targetApi="31">
         <activity
-            android:name=".image_acrivity"
+            android:name="com.sst.practiceapp.PrintTable"
             android:exported="false" />
         <activity
-            android:name=".second_activity"
-            android:exported="false" />
-        <activity
-            android:name=".MainActivity"
-            android:exported="true">
+            android:name="com.sst.practiceapp.SplashActivity"
+            android:exported="true"
+            android:screenOrientation="locked">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name="com.sst.practiceapp.HomeActivity"
+            android:exported="false"
+            android:screenOrientation="locked" />
+        <activity
+            android:name="com.sst.practiceapp.Getimg_activity"
+            android:exported="false"
+            android:parentActivityName="com.sst.practiceapp.image_acrivity"
+            android:screenOrientation="locked" />
+        <activity
+            android:name="com.sst.practiceapp.image_acrivity"
+            android:exported="false"
+            android:parentActivityName="com.sst.practiceapp.HomeActivity"
+            android:screenOrientation="locked" />
+        <activity
+            android:name="com.sst.practiceapp.second_activity"
+            android:exported="false"
+            android:parentActivityName="com.sst.practiceapp.MainActivity"
+            android:screenOrientation="locked" />
+        <activity
+            android:name="com.sst.practiceapp.MainActivity"
+            android:exported="false"
+            android:parentActivityName="com.sst.practiceapp.HomeActivity"
+            android:screenOrientation="locked"></activity>
+
         <provider
             android:name="androidx.core.content.FileProvider"
-            android:authorities="com.example.practice.fileprovider"
+            android:authorities="com.sst.practice.fileprovider"
             android:exported="false"
             android:grantUriPermissions="true">
             <meta-data
