@@ -1,10 +1,11 @@
 package com.sst.practiceapp
 
 import android.content.Intent
+import android.content.SharedPreferences
 import android.os.Bundle
-import android.text.Layout
 import android.text.method.HideReturnsTransformationMethod
 import android.text.method.PasswordTransformationMethod
+import android.util.Log
 import android.view.View
 import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
@@ -39,11 +40,10 @@ class MainActivity : AppCompatActivity(), AdapterView.OnItemSelectedListener {
     //    regex for name
     val namePattern ="/^[a-zA-Z ]*\$/"
 
-    //
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-       val back =findViewById<ImageButton>(R.id.action_bar_back)
+        val back =findViewById<ImageButton>(R.id.action_bar_back)
         back.setOnClickListener{
             finish()
         }
@@ -55,16 +55,15 @@ class MainActivity : AppCompatActivity(), AdapterView.OnItemSelectedListener {
         bSignUp=findViewById(R.id.sign_up)
         bSignUp.setOnClickListener(){
             if(signUp()){
-                var intentsecond_activity = Intent(this, second_activity::class.java)
+                val intentsecond_activity = Intent(this, second_activity::class.java)
                 intentsecond_activity.putExtra("data",data_list)
                 startActivity(intentsecond_activity)
             }
-
+            addtoSharedpre()
         }
     }
     //submit the sign up form
     fun signUp():Boolean{
-
         createInstance()
         if (checkAllFields()) return true
         return false
@@ -88,7 +87,6 @@ class MainActivity : AppCompatActivity(), AdapterView.OnItemSelectedListener {
     }
     // creating instance of the variable
     fun createInstance(){
-
         eAddress=findViewById(R.id.address)
         eNumber = findViewById(R.id.phone_number)
         etEmail=findViewById(R.id.email)
@@ -104,7 +102,6 @@ class MainActivity : AppCompatActivity(), AdapterView.OnItemSelectedListener {
         etName=findViewById(R.id.username)
         etEmail=findViewById(R.id.email)
         rbgenderval=findViewById(rgGender.checkedRadioButtonId)
-
     }
 
     // check that all imput are present or not
@@ -155,12 +152,20 @@ class MainActivity : AppCompatActivity(), AdapterView.OnItemSelectedListener {
         if (!cb1Hobby.isChecked && !cb2Hobby.isChecked && !cb3Hobby.isChecked ){
             Toast.makeText(this,"Select a Hobby",Toast.LENGTH_SHORT).show()
             return false
-
         }
         else{
-            if (cb1Hobby.isChecked)  data_list.put("hobby1",cb1Hobby.text.toString())
-            if (cb2Hobby.isChecked)  data_list.put("hobby2",cb2Hobby.text.toString())
-            if (cb3Hobby.isChecked)  data_list.put("hobby3",cb3Hobby.text.toString())
+            if (cb1Hobby.isChecked) {
+                data_list["hobby1"] = cb1Hobby.text.toString()
+            }
+            if (cb2Hobby.isChecked) {
+                data_list["hobby2"] = cb2Hobby.text.toString()
+            }
+            if (cb3Hobby.isChecked) {
+                data_list["hobby3"] = cb3Hobby.text.toString()
+            }
+            Log.e("hooby","${cb1Hobby.isChecked} ${cb2Hobby.isChecked} ${cb3Hobby.isChecked}")
+
+//            log.e("list hobby value","${li}")
             tvHobby!!.error=null
         }
         addTOList()
@@ -207,7 +212,39 @@ class MainActivity : AppCompatActivity(), AdapterView.OnItemSelectedListener {
             spinner.adapter = adapter
         }
     }
-
+    fun addtoSharedpre(){
+        val sharedPreferences = getSharedPreferences("UserData", MODE_PRIVATE)
+        var myEdit:SharedPreferences.Editor = sharedPreferences.edit()
+        myEdit.clear()
+        myEdit.apply()
+        var temp:RadioButton = findViewById(rgGender.checkedRadioButtonId)
+        myEdit.putString("name",etName.text.toString())
+        myEdit.putString("email",etEmail.text.toString())
+        myEdit.putString("country",sSpinner.selectedItem.toString())
+        myEdit.putString("gender",temp.text.toString())
+        myEdit.putString("number",eNumber.text.toString())
+        myEdit.putString("address",eAddress.text.toString())
+        if (!cb1Hobby.isChecked){
+            myEdit.remove("hobby1")
+        }else{
+            myEdit.putString("hobby1", cb1Hobby.text.toString())
+        }
+        if (!cb2Hobby.isChecked){
+            myEdit.remove("hobby2")
+        }else{
+            myEdit.putString("hobby2", cb2Hobby.text.toString())
+        }
+        if (!cb3Hobby.isChecked){
+            myEdit.remove("hobby3")
+        }
+        else{
+            myEdit.putString("hobby3",cb3Hobby.text.toString())
+        }
+//        myEdit.putString("hobby1", cb2Hobby.text.toString())
+//        myEdit.putString("hobby2", cb2Hobby.text.toString())
+//        myEdit.putString("hobby3",cb3Hobby.text.toString())
+        myEdit.apply()
+    }
     //
     override fun onItemSelected(p0: AdapterView<*>?, p1: View?, p2: Int, p3: Long) {
 

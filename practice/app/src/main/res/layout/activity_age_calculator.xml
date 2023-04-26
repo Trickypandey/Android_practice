@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#e5b2ba"
+        tools:context="com.sst.practiceapp.AgeCalculatorActivity"
+        >
+        <TableLayout
+            android:id="@+id/tableLayout"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <TableRow
+                android:background="#a8ece1">
+
+                <ImageButton
+                    android:id="@+id/action_bar_back"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center_vertical"
+                    android:background="@android:color/transparent"
+                    android:paddingStart="8dp"
+                    android:src="@drawable/back_icon"
+                    android:contentDescription="TODO" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center_horizontal"
+                    android:padding="10dp"
+                    android:text="@string/app_name"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
+            </TableRow>
+        </TableLayout>
+
+
+        <LinearLayout
+            android:id="@+id/dates"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:orientation="horizontal"
+            app:layout_constraintBottom_toTopOf="@+id/btns"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tableLayout">
+
+            <TextView
+                android:id="@+id/current_date"
+                android:layout_weight="1"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:gravity="center"
+                android:text="Current Date"
+                android:textSize="30sp" />
+
+            <TextView
+                android:id="@+id/birthday"
+                android:layout_weight="1"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:gravity="center"
+                android:hint="Your birth Date"
+                android:textSize="30sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/btns"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:gravity="center"
+            android:orientation="horizontal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/dates">
+
+            <Button
+                android:layout_weight="1"
+                android:id="@+id/change_cur_date"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:text="Change current Date" />
+
+            <Button
+                android:layout_weight="1"
+                android:id="@+id/select_date"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:text="Select your birthdate" />
+        </LinearLayout>
+
+
+        <Button
+            android:id="@+id/calculate"
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:layout_marginTop="128dp"
+            android:gravity="center"
+            android:text="Calculate"
+            app:layout_constraintBottom_toTopOf="@id/age"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/btns" />
+
+        <TextView
+            android:id="@+id/age"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:textSize="40sp"
+            android:gravity="center"
+            android:text="Your Age"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/calculate" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

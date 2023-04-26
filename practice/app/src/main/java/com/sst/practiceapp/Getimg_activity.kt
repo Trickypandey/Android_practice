@@ -5,13 +5,13 @@ import android.graphics.Bitmap
 import android.graphics.BitmapFactory
 import android.media.ExifInterface
 import android.net.Uri
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Environment
 import android.provider.MediaStore
 import android.util.Log
 import android.widget.*
 import androidx.appcompat.app.AlertDialog
+import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.FileProvider
 import com.sst.practiseapp.R
 import java.io.File
@@ -107,7 +107,6 @@ private fun getCameraPhotoOrientation(imagePath: String?): Int {
             FileProvider.getUriForFile( this,"com.sst.practice.fileprovider", imageFile  )
         intent.putExtra(MediaStore.EXTRA_OUTPUT,imgUri  )
         startActivityForResult(intent,2 )
-
     }
     private fun choosePhotoFromGallary() {
         val galleryIntent = Intent(

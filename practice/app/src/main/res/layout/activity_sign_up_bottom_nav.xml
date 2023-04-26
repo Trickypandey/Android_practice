@@ -1,0 +1,314 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+    <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:fillViewport="true">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="fill_parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:context="com.sst.practiceapp.SignUpBottomNavActivity"
+            >
+
+
+            <TextView
+                android:id="@+id/textview_for_login"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:gravity="center"
+                android:text="Create Account"
+                android:textSize="25sp"
+                android:layout_marginTop="30dp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toTopOf="@id/username"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <EditText
+                android:id="@+id/username"
+                style="@style/style_main_act"
+                android:digits=" abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"
+                android:hint="@string/name"
+                android:importantForAutofill="no"
+                android:inputType="text"
+                android:textSize="@dimen/text_size"
+                app:layout_constraintBottom_toTopOf="@id/phone_number"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/textview_for_login" />
+
+            <EditText
+                android:id="@+id/phone_number"
+                style="@style/style_main_act"
+                android:hint="@string/number"
+                android:textSize="@dimen/text_size"
+                android:inputType="number"
+                app:layout_constraintBottom_toTopOf="@id/address"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/username" />
+
+            <EditText
+                android:id="@+id/address"
+                style="@style/style_main_act"
+                android:hint="@string/address"
+                android:textSize="@dimen/text_size"
+                android:inputType="textLongMessage"
+                app:layout_constraintBottom_toTopOf="@id/email"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/phone_number" />
+
+            <EditText
+                android:id="@+id/email"
+                style="@style/style_main_act"
+                android:hint="@string/email"
+                android:inputType="textEmailAddress"
+                android:textSize="@dimen/text_size"
+                app:layout_constraintBottom_toTopOf="@id/password"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/address" />
+
+            <EditText
+                android:id="@+id/password"
+                style="@style/style_main_act"
+                android:textSize="@dimen/text_size"
+                android:hint="Password"
+                android:inputType="textWebPassword"
+                app:layout_constraintBottom_toTopOf="@id/ll_pass"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/email" />
+
+            <LinearLayout
+                android:id="@+id/ll_pass"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/round_corner_back"
+                android:orientation="horizontal"
+                app:layout_constraintBottom_toTopOf="@id/gender"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/password">
+
+                <EditText
+                    android:id="@+id/confirmpas"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/round_corner_back"
+                    android:fontFamily="@font/montserrat_regular"
+                    android:hint="Confirm password"
+                    android:textSize="@dimen/text_size"
+                    android:inputType="textWebPassword"
+                    android:paddingLeft="20dp"
+                    android:paddingRight="20dp"
+                    android:textColorHint="#b58abc"
+                    />
+
+                <TextView
+                    android:id="@+id/text_showpass"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:textSize="@dimen/text_size"
+                    android:paddingRight="20dp"
+                    android:text="Show" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_marginTop="20dp"
+                android:id="@+id/gender"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:background="@drawable/round_corner_back"
+                android:paddingLeft="20dp"
+                app:layout_constraintBottom_toTopOf="@id/spinner"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/ll_pass">
+
+                <TextView
+                    android:id="@+id/gender_text"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:layout_weight="2"
+                    android:background="@android:color/transparent"
+                    android:fontFamily="@font/montserrat_regular"
+                    android:gravity="center_vertical"
+                    android:hint="@string/gender"
+                    android:textColorHint="#b58abc"
+                    android:textSize="@dimen/text_size" />
+
+                <RadioGroup
+                    android:id="@+id/gender_value"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:orientation="horizontal">
+
+                    <RadioButton
+                        android:id="@+id/radioButton"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:buttonTint="#022D36"
+                        android:textSize="12dp"
+                        android:checked="true"
+                        android:fontFamily="@font/montserrat_regular"
+                        android:text="Male" />
+
+                    <RadioButton
+                        android:id="@+id/radioButton2"
+                        android:textSize="12dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:buttonTint="#022D36"
+                        android:layout_weight="1"
+                        android:fontFamily="@font/montserrat_regular"
+                        android:text="Female" />
+                </RadioGroup>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_marginTop="20dp"
+                android:id="@+id/spinner"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:background="@drawable/round_corner_back"
+                android:paddingLeft="20dp"
+                app:layout_constraintBottom_toTopOf="@id/hobby"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/gender">
+
+                <TextView
+                    android:id="@+id/spinner_text"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:layout_weight="1.5"
+                    android:textSize="@dimen/text_size"
+                    android:background="@android:color/transparent"
+                    android:fontFamily="@font/montserrat_regular"
+                    android:gravity="center_vertical"
+                    android:hint="@string/country"
+                    android:textColorHint="#b58abc" />
+
+                <Spinner
+                    android:id="@+id/spinner_list"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+
+                    />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/hobby"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginRight="20dp"
+                android:background="@drawable/round_corner_back"
+                android:orientation="horizontal"
+                android:paddingLeft="20dp"
+                app:layout_constraintBottom_toTopOf="@id/sign_up"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/spinner">
+
+                <TextView
+                    android:id="@+id/hobby_text"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:background="@android:color/transparent"
+                    android:fontFamily="@font/montserrat_regular"
+                    android:gravity="center_vertical"
+                    android:hint="@string/hobby"
+                    android:layout_weight="3"
+                    android:textColorHint="#b58abc"
+                    android:textSize="@dimen/text_size"/>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/hobby_value"
+                    android:layout_weight="1"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal"
+                    android:paddingRight="20dp">
+
+                    <CheckBox
+                        android:id="@+id/checkBox"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:fontFamily="@font/montserrat_regular"
+                        android:text="Singing"
+                        android:textSize="12sp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintEnd_toStartOf="@id/checkBox2"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        />
+
+                    <CheckBox
+                        android:id="@+id/checkBox2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:textSize="12sp"
+                        android:fontFamily="@font/montserrat_regular"
+                        android:text="Danceing"
+
+                        app:layout_constraintStart_toEndOf="@id/checkBox"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toStartOf="@id/checkBox3"
+                        />
+
+                    <CheckBox
+                        android:id="@+id/checkBox3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:textSize="12sp"
+                        android:fontFamily="@font/montserrat_regular"
+                        android:text="Anime"
+                        app:layout_constraintStart_toEndOf="@id/checkBox2"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/sign_up"
+                style="@style/style_main_act"
+                android:backgroundTint="@color/white"
+                android:textSize="@dimen/text_size"
+                android:text="Sign Up"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginBottom="20dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/hobby" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+</layout>

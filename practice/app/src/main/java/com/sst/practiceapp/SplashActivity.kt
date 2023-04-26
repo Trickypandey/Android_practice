@@ -17,4 +17,9 @@ class SplashActivity : AppCompatActivity() {
             finish()
         },1500)
     }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        HomeActivity().setAppLocale(this,"en")
+    }
 }

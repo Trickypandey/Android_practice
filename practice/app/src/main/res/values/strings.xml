@@ -1,5 +1,22 @@
 <resources>
     <string name="app_name">Basic App</string>
+    <string name="sign_up">Sign Up</string>
+    <string name="image_selector">Image Selector</string>
+    <string name="print_table">Print Table</string>
+    <string name="date_calculator">Date calculator</string>
+    <string name="working_hour">Working Hour</string>
+    <string name="redirect">Redirect</string>
+    <string name="turn_off">Turn Off</string>
+    <string name="turn_on">Turn On</string>
+    <string name="Localization">Localization</string>
+    <string name="english">English</string>
+    <string name="check_network_connection">Check Network Connection</string>
+    <string name="network_error">Network Error</string>
+    <string name="internet_check">Please check your internet Connection</string>
+    <string name="push_notification">Push Notification</string>
+    <string name="text_to_speech">Text To Speech</string>
+    <string name="load_images">Load Images</string>
+    <string name="video_play">Video Play</string>
     <string-array name="birds">
         <item>Select the Country</item>
         <item>India</item>
@@ -9,4 +26,19 @@
         <item>china</item>
         <item>America</item>`
     </string-array>
+    <string name="bottom_nav">Bottom Navigation</string>
+    <string name="title_activity_fragment_events" translatable="false">FragmentEvents</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment" translatable="false">Hello blank fragment</string>
+    <string name="user_data">User Data</string>
+    <string name="name">Name :-</string>
+    <string name="number">Number :-</string>
+    <string name="address">Address :-</string>
+    <string name="email">Email :-</string>
+    <string name="gender">Gender :-</string>
+    <string name="country">Country :-</string>
+    <string name="hobby">Hobby :-</string>
+    <string name="Profle_Page">Check Your Profile</string>
+    <!-- TODO: Remove or change this placeholder text -->
+
 </resources>

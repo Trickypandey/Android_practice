@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <RadioGroup
+        android:id="@+id/language_Group"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <RadioButton
+            android:id="@+id/english"
+            android:layout_width="match_parent"
+            android:text="English"
+
+            android:layout_height="50dp"/>
+        <RadioButton
+            android:id="@+id/hindi"
+            android:layout_width="match_parent"
+            android:text="Hindi"
+        android:layout_height="50dp"/>
+    </RadioGroup>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

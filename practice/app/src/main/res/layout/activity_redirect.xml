@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context="com.sst.practiceapp.RedirectActivity"
+        >
+        <TableLayout
+            android:id="@+id/tableLayout"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <TableRow
+                android:background="#FF6200EE">
+
+                <ImageButton
+                    android:id="@+id/action_bar_back"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentTop="true"
+                    android:layout_centerHorizontal="true"
+                    android:layout_gravity="center_vertical"
+                    android:background="@android:color/transparent"
+                    android:paddingLeft="8dp"
+                    android:src="@drawable/back_icon" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentTop="true"
+                    android:layout_weight="1"
+                    android:gravity="center_horizontal"
+                    android:padding="10dp"
+                    android:text="@string/app_name"
+                    android:textSize="20dp"
+                    android:textStyle="bold" />
+
+            </TableRow>
+        </TableLayout>
+
+        <Button
+            android:id="@+id/gmail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Gmail"
+            android:visibility="visible"
+            app:layout_constraintVertical_chainStyle="packed"
+            app:layout_constraintBottom_toTopOf="@id/facebook"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tableLayout" />
+
+        <Button
+            android:id="@+id/facebook"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Facebook"
+            app:layout_constraintBottom_toTopOf="@id/whatsapp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/gmail" />
+
+        <Button
+            android:id="@+id/whatsapp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Whats App"
+            app:layout_constraintBottom_toTopOf="@id/playstore"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/facebook" />
+
+        <Button
+            android:id="@+id/playstore"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="PlayStore"
+            app:layout_constraintBottom_toTopOf="@id/googlemap"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/whatsapp" />
+
+        <Button
+            android:id="@+id/googlemap"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Google Map"
+            app:layout_constraintBottom_toTopOf="@id/normalLink"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/playstore" />
+
+        <Button
+            android:id="@+id/normalLink"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Normal Link"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/googlemap" />
+        <Button
+            android:id="@+id/sms"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="SMS"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/normalLink" />
+
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

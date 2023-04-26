@@ -1,5 +1,4 @@
 package com.sst.practiceapp
-import android.content.Context
 import android.content.Intent
 import android.graphics.Bitmap
 import android.graphics.BitmapFactory
@@ -8,7 +7,6 @@ import android.net.Uri
 import android.os.Bundle
 import android.os.Environment
 import android.provider.MediaStore
-import android.service.controls.ControlsProviderService.TAG
 import android.util.Log
 import android.widget.Button
 import android.widget.ImageButton
@@ -18,15 +16,15 @@ import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.app.AppCompatDelegate
 import androidx.core.content.FileProvider
-import com.sst.practiceapp.Getimg_activity
 import com.sst.practiseapp.R
 import java.io.File
 import java.io.IOException
+
 class image_acrivity : AppCompatActivity() {
     private lateinit var btn: Button
     private lateinit var send: Button
     private lateinit var imageview: ImageView
-     var currentPhotoPath:String? = null
+    var currentPhotoPath:String? = null
     lateinit var imgUri: Uri
     private val GALLERY = 1
     private val CAMERA = 2
@@ -90,6 +88,7 @@ class image_acrivity : AppCompatActivity() {
         {
             if (data != null)
             {
+                Log.e("Result","$resultCode")
                 val contentURI = data.data
                 try
                 {

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">बेसिक ऐप</string>
+    <string name="image_selector">छवि चयनकर्ता</string>
+    <string name="sign_up">साइन अप करें</string>
+    <string name="print_table">प्रिंट टेबल</string>
+    <string name="date_calculator">दिनांक कैलकुलेटर</string>
+    <string name="working_hour">कार्यकारी घंटे</string>
+    <string name="redirect">पुनर्निर्देशन</string>
+    <string name="turn_off">बंद करें</string>
+    <string name="turn_on">चालू करो</string>
+    <string name="Localization">स्थानीयकरण</string>
+    <string name="english">अंग्रेज़ी</string>
+    <string name="check_network_connection">नेटवर्क कनेक्शन की जाँच करें</string>
+    <string name="network_error">नेटवर्क त्रुटि</string>
+    <string name="internet_check">कृपया अपने इंटरनेट कनेक्शन की जाँच करें</string>
+    <string name="push_notification">पुश नोटीफिकेशन</string>
+    <string name="text_to_speech">भाषण के पाठ</string>
+    <string name="load_images">छवि लेाड करें</string>
+    <string name="video_play">वीडियो प्ले</string>
+    <string name="bottom_nav">निचला नेविगेशन</string>
+    <string name="user_data">" उपयोगकर्ता का डेटा"</string>
+    <string name="name">"नाम :- "</string>
+    <string name="number">संख्या :-</string>
+    <string name="address">पता :-</string>
+    <string name="email">" ईमेल :-"</string>
+    <string name="gender">" लिंग :-"</string>
+    <string name="country">"देश :- "</string>
+    <string name="hobby">शौक :-</string>
+    <string name="Profle_Page">" अपनी प्रोफ़ाइल जांचें"</string>
+</resources>

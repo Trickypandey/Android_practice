@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fillViewport="true"
@@ -69,7 +68,7 @@
             android:id="@+id/username"
             style="@style/style_main_act"
             android:digits=" abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"
-            android:hint="Name"
+            android:hint="@string/name"
             android:importantForAutofill="no"
             android:inputType="text"
             android:textSize="@dimen/text_size"
@@ -81,7 +80,7 @@
         <EditText
             android:id="@+id/phone_number"
             style="@style/style_main_act"
-            android:hint="Number"
+            android:hint="@string/number"
             android:textSize="@dimen/text_size"
             android:inputType="number"
             app:layout_constraintBottom_toTopOf="@id/address"
@@ -92,7 +91,7 @@
         <EditText
             android:id="@+id/address"
             style="@style/style_main_act"
-            android:hint="Address"
+            android:hint="@string/address"
             android:textSize="@dimen/text_size"
             android:inputType="textMultiLine"
             android:maxLines="5"
@@ -104,7 +103,7 @@
         <EditText
             android:id="@+id/email"
             style="@style/style_main_act"
-            android:hint="Email"
+            android:hint="@string/email"
             android:inputType="textEmailAddress"
             android:textSize="@dimen/text_size"
             app:layout_constraintBottom_toTopOf="@id/password"
@@ -184,7 +183,7 @@
                 android:background="@android:color/transparent"
                 android:fontFamily="@font/montserrat_regular"
                 android:gravity="center_vertical"
-                android:hint="Gender"
+                android:hint="@string/gender"
                 android:textColorHint="#b58abc"
                 android:textSize="@dimen/text_size" />
 
@@ -241,7 +240,7 @@
                 android:background="@android:color/transparent"
                 android:fontFamily="@font/montserrat_regular"
                 android:gravity="center_vertical"
-                android:hint="Country"
+                android:hint="@string/country"
                 android:textColorHint="#b58abc" />
 
             <Spinner
@@ -275,7 +274,7 @@
                 android:background="@android:color/transparent"
                 android:fontFamily="@font/montserrat_regular"
                 android:gravity="center_vertical"
-                android:hint="Hobby"
+                android:hint="@string/hobby"
                 android:layout_weight="3"
                 android:textColorHint="#b58abc"
                 android:textSize="@dimen/text_size"/>

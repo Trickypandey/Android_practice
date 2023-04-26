@@ -1,65 +1,150 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout xmlns:tools="http://schemas.android.com/tools"
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
-    <androidx.constraintlayout.widget.ConstraintLayout
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+    <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="#e5b2ba"
-        tools:context="com.sst.practiceapp.HomeActivity"
+        android:fillViewport="true"
         >
-
-        <TableLayout
-            android:id="@+id/tableLayout"
+        <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_chainStyle="packed">
+            android:layout_height="match_parent"
+            tools:context="com.sst.practiceapp.HomeActivity"
+            >
+            <TableLayout
+                android:id="@+id/tableLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_chainStyle="packed">
 
-            <TableRow android:background="#a8ece1">
+                <TableRow android:background="#a8ece1">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentTop="true"
+                        android:layout_weight="1"
+                        android:gravity="center_horizontal"
+                        android:padding="10dp"
+                        android:text="@string/app_name"
+                        android:textSize="20dp"
+                        android:textStyle="bold" />
+                    <TextView
+                        android:id="@+id/menu"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
+                        android:textSize="20dp"
+                        android:text="menu"
+                        />
+                </TableRow>
+            </TableLayout>
+            <Button
+                android:id="@+id/sign_up"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/sign_up"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/image_selector" />
+            <Button
+                android:id="@+id/image_selector"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/image_selector"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tableLayout" />
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentTop="true"
-                    android:layout_weight="1"
-                    android:gravity="center_horizontal"
-                    android:padding="10dp"
-                    android:text="@string/app_name"
-                    android:textSize="20dp"
-                    android:textStyle="bold" />
+            <Button
+                android:id="@+id/table_print"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/print_table"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/sign_up" />
+            <Button
+                android:id="@+id/birthday_cal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/date_calculator"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/table_print" />
+            <Button
+                android:id="@+id/working_hour"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/working_hour"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/birthday_cal" />
+            <Button
+                android:id="@+id/redirection"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/redirect"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/working_hour" />
+            <ToggleButton
+                android:id="@+id/onOffFlashlight"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textOn="@string/turn_off"
+                android:textOff="@string/turn_on"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/redirection"
+                />
 
-            </TableRow>
-        </TableLayout>
-        <Button
-            android:id="@+id/sign_up"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Sign Up"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/image_selector" />
-        <Button
-            android:id="@+id/image_selector"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Image Selector"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tableLayout" />
-
-        <Button
-            android:id="@+id/table_print"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Print Table"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/sign_up" />
-        <EditText
-            android:id="@+id/table_number"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:inputType="number"
-            />
-    </androidx.constraintlayout.widget.ConstraintLayout>
+            <Button
+                android:id="@+id/Localization"
+                android:layout_width="wrap_content"
+                android:layout_height="50dp"
+                android:text="@string/Localization"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/onOffFlashlight" />
+<!--            <Button-->
+<!--                android:id="@+id/english"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="50dp"-->
+<!--                android:text="@string/english"-->
+<!--                app:layout_constraintStart_toStartOf="parent"-->
+<!--                app:layout_constraintTop_toBottomOf="@+id/hindi" />-->
+            <Button
+                android:id="@+id/connection"
+                android:layout_width="wrap_content"
+                android:layout_height="50dp"
+                android:text="@string/check_network_connection"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/Localization" />
+            <Button
+                android:id="@+id/push_notification"
+                android:layout_width="wrap_content"
+                android:layout_height="50dp"
+                android:text="@string/push_notification"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/connection" />
+            <Button
+                android:id="@+id/textToSpeech"
+                android:layout_width="wrap_content"
+                android:layout_height="50dp"
+                android:text="@string/text_to_speech"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/push_notification" />
+            <Button
+                android:id="@+id/loadImage"
+                android:layout_width="wrap_content"
+                android:layout_height="50dp"
+                android:text="@string/load_images"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textToSpeech" />
+            <Button
+                android:id="@+id/video"
+                android:layout_width="wrap_content"
+                android:layout_height="50dp"
+                android:text="@string/video_play"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/loadImage" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
 </layout>

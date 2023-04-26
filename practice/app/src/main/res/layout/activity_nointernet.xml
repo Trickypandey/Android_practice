@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        tools:context="com.sst.practiceapp.NointernetActivity"
+        android:orientation="vertical">
+
+        <ImageView
+            android:id="@+id/errorImageView"
+            android:layout_width="match_parent"
+            android:layout_height="120dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/ic_network_wrror_foreground"
+            tools:ignore="ContentDescription" />
+
+        <TextView
+            android:id="@+id/errorTextView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:gravity="center"
+            android:text="@string/network_error"
+            android:textColor="@color/black"
+            app:layout_constraintTop_toBottomOf="@+id/errorImageView" />
+
+        <TextView
+            android:id="@+id/errormsgTextView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:gravity="center"
+            android:text="@string/internet_check"
+            android:textColor="@color/black"
+            app:layout_constraintTop_toBottomOf="@+id/errorTextView" />
+
+        <Button
+            android:id="@+id/retry"
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:text="Retry"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/errormsgTextView" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

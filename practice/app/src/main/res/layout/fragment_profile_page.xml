@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:fillViewport="true"
+    android:layout_height="match_parent">
+    <androidx.constraintlayout.widget.ConstraintLayout
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#e5b2ba"
+        tools:context="com.sst.practiceapp.second_activity">
+        <TableLayout
+            android:id="@+id/tableLayout"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <TableRow
+                android:background="#a8ece1">
+                <ImageButton
+                    android:id="@+id/action_bar_back"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentTop="true"
+                    android:layout_centerHorizontal="true"
+                    android:layout_gravity="center_vertical"
+                    android:background="@android:color/transparent"
+                    android:paddingLeft="8dp"
+                    android:src="@drawable/back_icon" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentTop="true"
+                    android:layout_weight="1"
+                    android:gravity="center_horizontal"
+                    android:padding="10dp"
+                    android:text="@string/app_name"
+                    android:textSize="20dp"
+                    android:textStyle="bold" />
+
+            </TableRow>
+        </TableLayout>
+        <TextView
+            android:id="@+id/title"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:fontFamily="@font/montserrat_semi_bold"
+            android:gravity="center"
+            android:text="@string/user_data"
+            android:textColor="@color/black"
+            android:textSize="40dp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toTopOf="@id/name"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tableLayout"
+            app:layout_constraintVertical_chainStyle="spread_inside"
+            />
+        <TextView
+            android:id="@+id/name"
+            style="@style/style_element_second_act"
+            android:text="@string/name"
+            app:layout_constraintBottom_toTopOf="@id/phone_number"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/title" />
+        <TextView
+            android:id="@+id/phone_number"
+            style="@style/style_element_second_act"
+            android:text="@string/number"
+            app:layout_constraintBottom_toTopOf="@id/address"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/name" />
+        <TextView
+            android:id="@+id/address"
+            style="@style/style_element_second_act"
+            android:layout_height="wrap_content"
+            android:text="@string/address"
+            app:layout_constraintBottom_toTopOf="@id/email"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/phone_number" />
+        <TextView
+            android:id="@+id/email"
+            style="@style/style_element_second_act"
+            android:text="@string/email"
+            app:layout_constraintBottom_toTopOf="@id/gender"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/address"/>
+        <TextView
+            android:id="@+id/gender"
+            style="@style/style_element_second_act"
+            android:text="@string/gender"
+            app:layout_constraintBottom_toTopOf="@id/country"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/email"/>
+        <TextView
+            android:id="@+id/country"
+            style="@style/style_element_second_act"
+            android:text="@string/country"
+            app:layout_constraintBottom_toTopOf="@id/hobby"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/gender"/>
+        <TextView
+            android:id="@+id/hobby"
+            style="@style/style_element_second_act"
+            android:paddingLeft="20dp"
+            android:text="@string/hobby"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/country"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>
+</layout>
